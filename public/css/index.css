@@ -2,6 +2,10 @@ header nav ul li a{
    color: darkred;
 }
 
+header{
+   box-shadow: 10px 5px 5px black;
+}
+
 .m{
    justify-content: flex-end;
    font-size: 1.5rem;
