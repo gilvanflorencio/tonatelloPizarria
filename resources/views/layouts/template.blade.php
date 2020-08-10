@@ -39,9 +39,8 @@
     <main>
      @yield('conteudo')
     </main>
-
     
-      <footer class="container-fluid  bg-success fixed-bottom">
+      <footer class="container-fluid bg-success" id="footer">
         <div class="row">
           <div class="col">
             Categoria
