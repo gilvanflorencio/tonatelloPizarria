@@ -16,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'indexController@index');
 
 Route::get('/pizzas', 'pizzasController@pizzas');
+Route::get('/detalhe/{id}', 'PizzasController@detalhePizza');
+
 

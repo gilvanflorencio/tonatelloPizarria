@@ -1,0 +1,33 @@
+@extends('layouts.template')
+
+@section('titulo')Detalhes @endsection
+
+@section('conteudo')    
+<link rel="stylesheet" href="./css/pizzas.css">
+<style>
+ #margem{
+   margin:10px auto auto 10px;
+ }
+</style>
+ 
+    <section>
+        <div class="card mb-4 col-6 col-sm-6" id="margem" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-md-4 col-6 col-sm-6">
+                <img src="/img/atum-1.jpg" class="card-img" alt="...">
+              </div>
+              <div class="col-md-6 col-6 col-sm-6">
+                <div class="card-body">
+                  <h5 class="card-title">{{$pizza->nome}}</h5>
+                <p class="card-text">{{$pizza->ingredientes}}</p>
+                <p class="card-text">{{$pizza->valor}}</p>
+                <button><a href="/pizzas">Voltar</a></button>                 
+                </div>
+              </div>
+            </div>
+          </div>
+       
+          
+   </section>
+    @endsection
+      

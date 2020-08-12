@@ -10,8 +10,10 @@
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="slick-theme.css">
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet">
-    <title> @yield('titulo')</title>
+    
+     <title> @yield('titulo')</title>
   </head>
 
   <body>
@@ -96,5 +98,8 @@
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" 
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+       
+    
   </body>
 </html>

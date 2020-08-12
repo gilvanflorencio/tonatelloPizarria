@@ -3,37 +3,32 @@
 @section('titulo') Pizzas @endsection
 
 @section('conteudo')
-    <link rel="stylesheet" href="./css/pizzas.css">
+    <link rel="stylesheet" href="/css/pizzas.css">
 
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Nº</th>
+        <th scope="col">Sabor</th>
+        <th scope="col">Ingredientes</th>
+        <th scope="col">Valor</th>
+        <th>Saiba Mais</th>
       </tr>
     </thead>
-    <tbody>
+
+@foreach ($pizzas as $pizza)
+   <tbody>
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+      <th scope="row">{{$pizza->id}}</th>
+        <td>{{$pizza->nome}}</td>
+        <td>{{$pizza->ingredientes}}</td>
+        <td>R$ {{number_format($pizza->valor,2,',','.')}}</td>
+        <td><a href="/detalhe/{{$pizza->id}}"> Detalhe</a></td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
+      
+    </tbody>   
+    @endforeach
+
   </table>
 
 @endsection
