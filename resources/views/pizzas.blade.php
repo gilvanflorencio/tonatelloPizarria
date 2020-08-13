@@ -24,11 +24,13 @@
         <td>{{$pizza->ingredientes}}</td>
         <td>R$ {{number_format($pizza->valor,2,',','.')}}</td>
         <td><a href="/detalhe/{{$pizza->id}}"> Detalhe</a></td>
-      </tr>
-      
+      </tr>      
     </tbody>   
     @endforeach
 
   </table>
+  <a type="button" class="btn btn-primary btn-lg btn-block" href="/cadastrarPizza">Cadastrar Nova Pizza</a>
+
+  
 
 @endsection

@@ -18,4 +18,11 @@ Route::get('/', 'indexController@index');
 Route::get('/pizzas', 'pizzasController@pizzas');
 Route::get('/detalhe/{id}', 'PizzasController@detalhePizza');
 
+Route::get('/cadastrarPizza', 'PizzasController@AreaCadastrar');
+
+Route::get('/cadastrarPizza', function () {return view('cadastrarPizza');});
+Route::post('/cadastrarPizza', 'PizzasController@cadastrarPizza');
+
+
+
 

@@ -15,4 +15,23 @@ class PizzasController extends Controller
         $pizza = Pizzas::find($id);
         return view('/detalhe', compact('pizza'));
     }
+
+    public function AreaCadastrar(){
+        return view('cadastrarPizza');
+    }
+
+  public function cadastrarPizza(Request $request)
+  { //dd($request->data);
+   if($request->nome){
+   $novaPizza  = new Pizzas();
+   $novaPizza->nome = $request->nome;
+   $novaPizza->ingredientes = $request->ingredientes;
+   $novaPizza->valor = $request->valor;
+   
+
+   $retorno = $novaPizza->save();   
+   return redirect('/pizzas');
+   }
+  }
+
 }
