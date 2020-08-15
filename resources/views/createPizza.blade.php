@@ -6,7 +6,7 @@
 
 <section>
 
-    <form  method="POST" action="" style="width: 400px;margin:10px auto 10px auto;" >
+    <form  method="POST" action="" style="width: 400px;margin:10px auto 10px auto;" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="nome">Nome Pizza</label>
@@ -20,12 +20,27 @@
             <label for="valor">Valor</label>
             <input type="number" class="form-control" id="valor" name="valor" placeholder="Valor">
           </div>
-
-        
+         
+            <div class="form-group">
+              <label for="foto">Carrega Foto</label>
+              <input type="file" class="form-control-file" id="foto" name="foto" multiple>
+            </div>
+                 
         <button type="submit" class="btn btn-primary" name="button">Submit</button>
       </form>
-    @if(@isset($resultado))
+
+      @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+    @if(isset($resultado))
           @if($resultado)
+          
    <h1>Pizza Cadastrada com Sucesso!</h1>
         @else
         <h1>Erro ao Cadastrar Pizza</h1>

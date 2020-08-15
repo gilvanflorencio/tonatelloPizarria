@@ -18,7 +18,7 @@ class Pizzas extends Migration
             $table->string('nome', 40);
             $table->text('ingredientes');
             $table->decimal('valor', 5, 2);
-            $table->string('foto', 70)->nullable();
+            $table->string('foto', 70)->nullable()->default(null);;
 
             $table->timestamps();
         });

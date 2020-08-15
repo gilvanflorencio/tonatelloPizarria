@@ -5,9 +5,9 @@
 @section('conteudo')
     <link rel="stylesheet" href="/css/pizzas.css">
 
-<table class="table">
-    <thead>
-      <tr>
+    <table class="table table-hover">
+     <thead>
+      <tr class="bg-danger">
         <th scope="col">Nº</th>
         <th scope="col">Sabor</th>
         <th scope="col">Ingredientes</th>
@@ -18,18 +18,25 @@
 
 @foreach ($pizzas as $pizza)
    <tbody>
-      <tr>
+      <tr class="table-light">
       <th scope="row">{{$pizza->id}}</th>
         <td>{{$pizza->nome}}</td>
         <td>{{$pizza->ingredientes}}</td>
         <td>R$ {{number_format($pizza->valor,2,',','.')}}</td>
-        <td><a href="/detalhe/{{$pizza->id}}"> Detalhe</a></td>
+      <td><a href="/detalhe/{{$pizza->id}}"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrows-fullscreen" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M1.464 10.536a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3.5a.5.5 0 0 1-.5-.5v-3.5a.5.5 0 0 1 .5-.5z"/>
+        <path fill-rule="evenodd" d="M5.964 10a.5.5 0 0 1 0 .707l-4.146 4.147a.5.5 0 0 1-.707-.708L5.257 10a.5.5 0 0 1 .707 0zm8.854-8.854a.5.5 0 0 1 0 .708L10.672 6a.5.5 0 0 1-.708-.707l4.147-4.147a.5.5 0 0 1 .707 0z"/>
+        <path fill-rule="evenodd" d="M10.5 1.5A.5.5 0 0 1 11 1h3.5a.5.5 0 0 1 .5.5V5a.5.5 0 0 1-1 0V2h-3a.5.5 0 0 1-.5-.5zm4 9a.5.5 0 0 0-.5.5v3h-3a.5.5 0 0 0 0 1h3.5a.5.5 0 0 0 .5-.5V11a.5.5 0 0 0-.5-.5z"/>
+        <path fill-rule="evenodd" d="M10 9.964a.5.5 0 0 0 0 .708l4.146 4.146a.5.5 0 0 0 .708-.707l-4.147-4.147a.5.5 0 0 0-.707 0zM1.182 1.146a.5.5 0 0 0 0 .708L5.328 6a.5.5 0 0 0 .708-.707L1.889 1.146a.5.5 0 0 0-.707 0z"/>
+        <path fill-rule="evenodd" d="M5.5 1.5A.5.5 0 0 0 5 1H1.5a.5.5 0 0 0-.5.5V5a.5.5 0 0 0 1 0V2h3a.5.5 0 0 0 .5-.5z"/>
+      </svg></a> <a href="/deletePizza/{{$pizza->id}}"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+      </svg></a> </td>
       </tr>      
     </tbody>   
-    @endforeach
-
+    @endforeach  
   </table>
-  <a type="button" class="btn btn-primary btn-lg btn-block" href="/cadastrarPizza">Cadastrar Nova Pizza</a>
+  <a type="button" class="btn btn-primary btn-lg btn-block" href="createPizza">Cadastrar Nova Pizza</a>
 
   
 
