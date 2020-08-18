@@ -23,7 +23,7 @@
          
             <div class="form-group">
               <label for="foto">Carrega Foto</label>
-              <input type="file" class="form-control-file" id="foto" name="foto" multiple>
+              <input type="file" class="form-control-file" id="foto" name="foto">
             </div>
                  
         <button type="submit" class="btn btn-primary" name="button">Submit</button>
@@ -41,7 +41,7 @@
     @if(isset($resultado))
           @if($resultado)
           
-   <h1>Pizza Cadastrada com Sucesso!</h1>
+   <h1 class="text-center">Pizza Cadastrada com Sucesso!</h1>
         @else
         <h1>Erro ao Cadastrar Pizza</h1>
         @endif

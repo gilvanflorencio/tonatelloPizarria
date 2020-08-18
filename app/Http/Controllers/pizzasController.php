@@ -28,16 +28,22 @@ $mensagem = [
       'valor'=>'numeric'
     ],$mensagem);
     
-    //dd($request->data);
+    //dd($request->foto);
 
    if($request->nome){
-   $upload = $request->foto->store('img');
+    if ($request->file('foto') == null) {
+      $upload = "";
+  }else{
+    $upload = $request->foto->store('img');
+  }
+     
+   
    $novaPizza  = new Pizzas();
    $novaPizza->nome = $request->nome;
    $novaPizza->ingredientes = $request->ingredientes;
    $novaPizza->valor = $request->valor;
-   $novaPizza->$request->foto = "/file/$upload";   
-
+   $novaPizza->foto = "/file/$upload";
+   
    $resultado = $novaPizza->save();   
    return view("/createPizza",['resultado'=>$resultado]);
    }
@@ -49,4 +55,5 @@ $mensagem = [
     return redirect()->action("pizzasController@pizzas");
   }
 
+  
 }
