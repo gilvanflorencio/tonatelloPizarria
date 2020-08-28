@@ -20,6 +20,8 @@ Route::get('/detalhe/{id}', 'PizzasController@detalhePizza');
 Route::get('/createPizza', function () {return view('createPizza');});
 Route::post('/createPizza', 'PizzasController@CreatePizza');
 Route::get('deletePizza/{id}', 'PizzasController@deletePizza');
+Route::get('editPizza','PizzasController@editPizza');
+
 
 Route::get('/file/img/{id}', ['uses'=>'FileController@sendfile'] );
 

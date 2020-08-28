@@ -52,8 +52,27 @@ $mensagem = [
   public function deletePizza($id){
     $pizza = Pizzas::find($id);
     $pizza->delete();
-    return redirect()->action("pizzasController@pizzas");
-  }
+    return redirect('/pizzas');
+    }
+
+    public function editPizza(Request $request){
+      if ($request->foto) {
+        $upload[] = explode(",", $pizza->foto);
+
+        foreach ($request->foto as $img) {
+            $upload[] = $img->store('img');
+        }
+        $stringToStore = implode(",", $upload);
+        $pizza->foto = $stringToStore;
+    }
+
+      $novaPizza = Pizzas::find($request->id);
+      $novaPizza->nome = $request->nome;
+      $novaPizza->ingredientes = $request->ingredientes;
+      $novaPizza->valor = $request->valor;
+      $novaPizza->save();
+      return redirect('/pizzas');
+      }
 
   
 }
