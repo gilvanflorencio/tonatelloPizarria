@@ -16,7 +16,7 @@
       </tr>
     </thead>
 
-@foreach ($pizzas as $pizza)
+    @foreach ($pizzas as $pizza )
    <tbody>
       <tr class="table-light">
       <th scope="row">{{$pizza->id}}</th>
@@ -49,8 +49,51 @@
     </tbody>   
     @endforeach  
   </table>
-  <a type="button" class="btn btn-primary btn-lg btn-block" href="createPizza">Cadastrar Nova Pizza</a>
+  
+   <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">
+  Cadastrar Pizza
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cadastrar Pizza</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form  method="post" action="" style="width: 400px;margin:10px auto 10px auto;" enctype="multipart/form-data">
+          @csrf
+          <div class="form-group">
+              <label for="nome">Nome Pizza</label>
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome da Pizza">
+            </div>
+            <div class="form-group">
+              <label for="ingredientes">Ingredientes</label>
+              <input type="text" class="form-control" id="ingredientes" name="ingredientes" placeholder="Ingredientes">
+            </div>
+            <div class="form-group">
+              <label for="valor">Valor</label>
+              <input type="number" class="form-control" id="valor" name="valor" placeholder="Valor">
+            </div>
+           
+              <div class="form-group">
+                <label for="foto">Carrega Foto</label>
+                <input type="file" class="form-control-file" id="foto" name="foto">
+              </div>
+                   
+          <button type="submit" class="btn btn-primary" name="button">Submit</button>
+        </form>  
+       
+      </div>
+      
+    </div>
+  </div>
+</div>
   
 
 @endsection
