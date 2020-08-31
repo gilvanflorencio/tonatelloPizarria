@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Database\Eloquent\Model;
 
-class fogazzas extends Model
+class Fogazzas extends Model
 {
     //
 }

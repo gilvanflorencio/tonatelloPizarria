@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Database\Eloquent\Model;
 
-class batataRecheada extends Model
+class BatataRecheada extends Model
 {
     //
 }

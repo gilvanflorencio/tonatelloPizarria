@@ -16,40 +16,7 @@ class PizzasController extends Controller
         return view('/detalhe', compact('pizzas'));
     }
     
-  public function createPizza(Request $request){
-$mensagem = [
-  "required" => "O campo :attribute é obrigatorio",
-  "numeric" => "Campo :attribute  é obrigatorio"
-];
-
-    $validatedData = $request->validate([
-      'nome' => 'required|max:20|min:3',
-      'ingredientes' => 'required',
-      'valor'=>'numeric'
-    ],$mensagem);
-    
-    //dd($request->foto);
-
-   if($request->nome){
-    if ($request->file('foto') == null) {
-      $upload = "";
-  }else{
-    $upload = $request->foto->store('img');
-  }
-     
-   
-   $novaPizza  = new Pizzas();
-   $novaPizza->nome = $request->nome;
-   $novaPizza->ingredientes = $request->ingredientes;
-   $novaPizza->valor = $request->valor;
-   $novaPizza->foto = "/file/$upload";
-   
-   $resultado = $novaPizza->save();   
-   return view("/createPizza",['resultado'=>$resultado]);
-   }
-  }
-
-  public function create(Request $request){
+    public function create(Request $request){
     $mensagem = [
       "required" => "O campo :attribute é obrigatorio",
       "numeric" => "Campo :attribute  é obrigatorio"
@@ -103,7 +70,5 @@ $mensagem = [
       $novaPizza->valor = $request->valor;
       $novaPizza->save();
       return redirect('/pizzas');
-      }
-
-  
+      }      
 }
