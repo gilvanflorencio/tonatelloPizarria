@@ -9,17 +9,19 @@
      <thead>
       <tr class="bg-danger">
         <th scope="col">Nº</th>
-        <th scope="col">Sabor</th>
+      
+        <th scope="col"></th>
+         
         <th scope="col">Ingredientes</th>
         <th scope="col">Valor</th>
         <th>Saiba Mais</th>
       </tr>
     </thead>
 
-    @foreach ($pizzas as $pizza )
+    @foreach ($produto as $pizza )
    <tbody>
       <tr class="table-light">
-      <th scope="row">{{$pizza->id}}</th>
+      <th scope="row">{{$pizza->categoria->nome}}</th>
         <td>{{$pizza->nome}}</td>
         <td>{{$pizza->ingredientes}}</td>
         <td>R$ {{number_format($pizza->valor,2,',','.')}}</td>
@@ -50,12 +52,12 @@
     @endforeach  
   </table>
   
-   <!-- Button trigger modal -->
+   <!-- Button trigger modal -->  
 <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">
   Cadastrar Pizza
 </button>
 
-<!-- Modal -->
+<!-- Modal -->  
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -80,7 +82,10 @@
               <label for="valor">Valor</label>
               <input type="number" class="form-control" id="valor" name="valor" placeholder="Valor">
             </div>
-           
+            <div class="form-group">
+              <label for="categoria_id">Categoria</label>
+              <input type="number" class="form-control" id="categoria_id" name="categoria_id" placeholder="categoria_id">
+            </div>
               <div class="form-group">
                 <label for="foto">Carrega Foto</label>
                 <input type="file" class="form-control-file" id="foto" name="foto">
@@ -93,7 +98,7 @@
       
     </div>
   </div>
-</div>
+</div> 
   
 
 @endsection

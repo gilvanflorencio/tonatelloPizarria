@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class BatataRecheada extends Migration
+class Categoria extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,10 @@ class BatataRecheada extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('categoria', function (Blueprint $table) {
+            $table->id();
+            $table->string('nome', 45);
+        });
     }
 
     /**
@@ -23,6 +26,6 @@ class BatataRecheada extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('categoria');
     }
 }

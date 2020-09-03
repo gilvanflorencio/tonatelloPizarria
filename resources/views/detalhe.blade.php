@@ -14,14 +14,14 @@
         <div class="card mb-4 col-6 col-sm-6" id="margem" style="max-width: 540px;">
             <div class="row no-gutters">
               <div class="col-md-4 col-6 col-sm-6">
-              <img src="{{$pizzas->foto}}" class="card-img" alt="{{$pizzas->nome}}">
+              <img src="{{$produto->foto}}" class="card-img" alt="{{$produto->nome}}">
               </div>
               <div class="col-md-6 col-6 col-sm-6">
                 <div class="card-body">
-                  <h5 class="card-title">{{$pizzas->nome}}</h5>
-                <p class="card-text">{{$pizzas->ingredientes}}</p>
-                <p class="card-text">{{$pizzas->valor}}</p>
-                <button><a href="/pizzas">Voltar</a></button>                 
+                  <h5 class="card-title">{{$produto->nome}}</h5>
+                <p class="card-text">{{$produto->ingredientes}}</p>
+                <p class="card-text">{{$produto->valor}}</p>
+                <a class="btn btn-primary" href="/pizzas" role="button">Voltar</a>                
                 </div>
               </div>
             </div>

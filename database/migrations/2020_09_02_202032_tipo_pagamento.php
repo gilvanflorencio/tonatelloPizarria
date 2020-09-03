@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Fogazzas extends Migration
+class TipoPagamento extends Migration
 {
     /**
      * Run the migrations.

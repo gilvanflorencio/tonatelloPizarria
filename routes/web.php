@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'indexController@index');
 
-Route::get('/pizzas', 'PizzasController@pizzas');
+Route::get('/pizzas', 'ProdutosController@pizzas');
 
-Route::get('/detalhe/{id}', 'PizzasController@detalhePizza');
-Route::post('/pizzas', 'PizzasController@create');
-Route::get('deletePizza/{id}', 'PizzasController@deletePizza');
-Route::get('editPizza','PizzasController@editPizza');
+Route::get('/detalhe/{id}', 'ProdutosController@detalhePizza');
+Route::post('/pizzas', 'ProdutosController@create');
+Route::get('deletePizza/{id}', 'ProdutosController@deletePizza');
+Route::get('editPizza','ProdutosController@editPizza');
 
 
 Route::get('/file/img/{id}', ['uses'=>'FileController@sendfile'] );

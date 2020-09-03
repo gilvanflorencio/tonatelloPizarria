@@ -1,19 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Model\Pizzas;
-use Illuminate\Http\Request;
 
-class PizzasController extends Controller
+use App\Model\Produto;
+use App\Model\Categoria;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+
+class ProdutosController extends Controller
 {
     public function pizzas(){
-        $pizzas = Pizzas::all();
-        return view('/pizzas',compact('pizzas'));
+        $produto = Produto::all();
+        //dd($produto);
+        return view('/pizzas',compact('produto'));
     }
 
     public function detalhePizza($id){
-        $pizzas = Pizzas::find($id);
-        return view('/detalhe', compact('pizzas'));
+        $produto = Produto::find($id);
+        return view('/detalhe', compact('produto'));
     }
     
     public function create(Request $request){
@@ -36,10 +41,11 @@ class PizzasController extends Controller
       }else{
         $upload = $request->foto->store('img');
       }                
-       $novaPizza  = new Pizzas();
+       $novaPizza  = new Produto();
        $novaPizza->nome = $request->nome;
        $novaPizza->ingredientes = $request->ingredientes;
        $novaPizza->valor = $request->valor;
+       $novaPizza->categoria_id = $request->categoria_id;
        $novaPizza->foto = "/file/$upload";
        
        $resultado = $novaPizza->save();   
@@ -48,8 +54,8 @@ class PizzasController extends Controller
       }
 
   public function deletePizza($id){
-    $pizza = Pizzas::find($id);
-    $pizza->delete();
+    $produto = Produto::find($id);
+    $produto->delete();
     return redirect('/pizzas');
     }
 
@@ -64,11 +70,17 @@ class PizzasController extends Controller
         $pizza->foto = $stringToStore;
     }
 
-      $novaPizza = Pizzas::find($request->id);
+      $novaPizza = Produto::find($request->id);
       $novaPizza->nome = $request->nome;
       $novaPizza->ingredientes = $request->ingredientes;
       $novaPizza->valor = $request->valor;
       $novaPizza->save();
       return redirect('/pizzas');
-      }      
+      }
 }
+
+
+
+
+
+
