@@ -8,20 +8,19 @@
     <table class="table table-hover">
      <thead>
       <tr class="bg-danger">
-        <th scope="col">Nº</th>
-      
-        <th scope="col"></th>
-         
+        <th scope="col">Nº</th>      
+        <th scope="col">Sabor</th>
         <th scope="col">Ingredientes</th>
         <th scope="col">Valor</th>
         <th>Saiba Mais</th>
       </tr>
     </thead>
 
-    @foreach ($produto as $pizza )
+    
+    @foreach ($pizzas as $pizza )
    <tbody>
       <tr class="table-light">
-      <th scope="row">{{$pizza->categoria->nome}}</th>
+      <th scope="row">{{$pizza->id}}</th>
         <td>{{$pizza->nome}}</td>
         <td>{{$pizza->ingredientes}}</td>
         <td>R$ {{number_format($pizza->valor,2,',','.')}}</td>
