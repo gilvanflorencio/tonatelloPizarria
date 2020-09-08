@@ -14,15 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'indexController@index');
+  //PIZZAS //
+Route::get('/pizzas', 'PizzaController@pizzas');
+Route::get('/detalhe/{id}', 'PizzaController@detalhePizza');
+Route::post('/pizzas', 'PizzaController@create');
+Route::get('deletePizza/{id}', 'PizzaController@deletePizza');
+Route::get('editPizza','PizzaController@editPizza');
+//FIM PIZZAS//
 
-Route::get('/pizzas', 'ProdutosController@pizzas');
-
-Route::get('/detalhe/{id}', 'ProdutosController@detalhePizza');
-Route::post('/pizzas', 'ProdutosController@create');
-Route::get('deletePizza/{id}', 'ProdutosController@deletePizza');
-Route::get('editPizza','ProdutosController@editPizza');
-
-
+//FOGAZZAS//
+Route::get('/fogazzas', 'FogazzasController@fogazzas');
+//FIM FOGAZZAS//
 Route::get('/file/img/{id}', ['uses'=>'FileController@sendfile'] );
 
 

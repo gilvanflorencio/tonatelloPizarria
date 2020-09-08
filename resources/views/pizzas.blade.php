@@ -5,7 +5,7 @@
 @section('conteudo')
     <link rel="stylesheet" href="/css/pizzas.css">
 
-    <table class="table table-hover">
+    <table class="table table-hover table-striped">
      <thead>
       <tr class="bg-danger">
         <th scope="col">Nº</th>      
@@ -19,7 +19,7 @@
     
     @foreach ($pizzas as $pizza )
    <tbody>
-      <tr class="table-light">
+      <tr>
       <th scope="row">{{$pizza->id}}</th>
         <td>{{$pizza->nome}}</td>
         <td>{{$pizza->ingredientes}}</td>
@@ -47,9 +47,13 @@
         </a>
      </td>
       </tr>      
-    </tbody>   
-    @endforeach  
+    </tbody>         
+    @endforeach
   </table>
+
+  
+  
+  
   
    <!-- Button trigger modal -->  
 <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">

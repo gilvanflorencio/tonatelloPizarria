@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
-class ProdutosController extends Controller
+class PizzaController extends Controller
 {
     public function pizzas(){
      

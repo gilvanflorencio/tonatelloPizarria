@@ -30,7 +30,7 @@
             <ul class="navbar-nav m">
               <li class="nav-item"><a class="nav-link" href="/pizzas">Pizzas</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Esfihas</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Fogazzas</a></li>
+              <li class="nav-item"><a class="nav-link" href="/fogazzas">Fogazzas</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Lanches</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Bebidas</a></li>
             </ul>
