@@ -29,7 +29,7 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav m">
               <li class="nav-item"><a class="nav-link" href="/pizzas">Pizzas</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Esfihas</a></li>
+              <li class="nav-item"><a class="nav-link" href="/esfihas">Esfihas</a></li>
               <li class="nav-item"><a class="nav-link" href="/fogazzas">Fogazzas</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Lanches</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Bebidas</a></li>
@@ -61,8 +61,8 @@
           <div class="col">
             <ul id="linkSite">
             <li><a href="/pizzas">Pizzas</a></li>
-            <li><a href="#">Esfihas</a></li>
-            <li><a href="#">Fogazzas</a></li>
+            <li><a href="/esfihas">Esfihas</a></li>
+            <li><a href="/fogazzas">Fogazzas</a></li>
             <li><a href="#">Lanches</a></li>
           </ul>
           </div>

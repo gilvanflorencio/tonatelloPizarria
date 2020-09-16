@@ -25,6 +25,10 @@ Route::get('editPizza','PizzaController@editPizza');
 //FOGAZZAS//
 Route::get('/fogazzas', 'FogazzasController@fogazzas');
 //FIM FOGAZZAS//
+
+//ESFIHAS//
+Route::get('/esfihas', 'EsfihasController@esfihas');
+//FIM ESFIHAS//
 Route::get('/file/img/{id}', ['uses'=>'FileController@sendfile'] );
 
 
