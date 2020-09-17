@@ -91,6 +91,7 @@ class PizzaController extends Controller
       $novaPizza->save();
       return redirect('/pizzas');
       }
+     
 }
 
 

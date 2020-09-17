@@ -11,6 +11,12 @@ class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
+    
+    // Informar ao Laravel que esse model refere-se
+    // a uma tabela sem timestamps
+    public $timestamps = false;
+    public $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *
