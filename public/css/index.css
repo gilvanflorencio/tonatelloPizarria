@@ -2,22 +2,23 @@ main{
   margin-bottom: auto;
 }
 
-header nav ul li a{
+ #navTop{
    color: darkred;
 }
 
-header nav ul li a:hover{
+ #navTop:hover{
    color: rgb(25, 5, 78);
    font-size: 2rem; ;
+   background-color:blanchedalmond;
 }
 
 header{
    box-shadow: 10px 5px 5px black;
 }
 
-.m{
-   justify-content: flex-end;
-   font-size: 1.5rem;
+#m{
+   /*justify-content: flex-end;*/
+   font-size: 1.3rem;
    font-family: 'Gloria Hallelujah', cursive;
  }
 
@@ -37,9 +38,24 @@ footer ul li a{
 #linkSite{
    padding-left: 0;
 }
+.imgFundo{
+   background-image: url("../img/CardapioFundo.png");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+#modalTitle{
+   margin: 1rem;
+   font-size: 2rem;
+   text-align: center;
+}
 
 #botao{
-   margin-left: 33%;
+  display: block;
+  margin-left: auto;
+   margin-right: auto;
+   padding-bottom: 1rem;    
    }
 
 .banner{
@@ -47,3 +63,32 @@ footer ul li a{
      height:100%;
      object-fit: cover;
       }
+.modalbotao{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-row: 100px 100px;
+   grid-gap: 5px;
+   margin-top: 5px;
+}
+.btn-block+.btn-block {
+   margin-top: 0;
+}
+
+     
+      
+
+             /*  ////////////////////////MOBILE/////////////////////////////*/
+
+             @media screen and (max-width: 600px) {
+               .modalRow {
+                  display: grid;
+                  grid-template-columns: 1fr;
+                  grid-gap:20px;
+                  font-size:2rem;
+                  text-align: center;
+               }
+               
+               .banner{                  
+                  padding-top: 1rem;    
+                  }                       
+            }

@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'indexController@index');
+Route::get('/', 'indexController@pizzas');//->name('pizzas')->middleware('auth');
+Route::get('/detalhe/{id}', 'PizzaController@detalhePizza');
+
+
   //PIZZAS //
-Route::get('/pizzas', 'PizzaController@pizzas')->name('pizzas')->middleware('auth');
+Route::get('/pizzas', 'PizzaController@pizzas');//->name('pizzas')->middleware('auth');
 Route::get('/detalhe/{id}', 'PizzaController@detalhePizza');
 Route::post('/pizzas', 'PizzaController@create');
 Route::get('deletePizza/{id}', 'PizzaController@deletePizza');

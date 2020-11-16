@@ -16,7 +16,6 @@ class FogazzasController extends Controller
            ->where('categoria_id', '=', 3)
            ->get();
   
-          return view('/fogazzas', compact('fogazzas'));
-           
+          return view('/fogazzas', compact('fogazzas'));           
         }
 }

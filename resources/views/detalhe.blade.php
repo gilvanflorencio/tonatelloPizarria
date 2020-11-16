@@ -21,7 +21,7 @@
                   <h5 class="card-title">{{$produto->nome}}</h5>
                 <p class="card-text">{{$produto->ingredientes}}</p>
                 <p class="card-text">{{$produto->valor}}</p>
-                <a class="btn btn-primary" href="/pizzas" role="button">Voltar</a>                
+                <a class="btn btn-primary" href="/" role="button">Voltar</a>                
                 </div>
               </div>
             </div>
